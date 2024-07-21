@@ -3,6 +3,8 @@ title: "PairExercise_Functions"
 author: "HDS"
 date: "2024-06-24"
 output: html_document
+editor_options: 
+  chunk_output_type: inline
 ---
 
 ```{r setup, include=FALSE}
@@ -75,6 +77,21 @@ x2power(3,2)
 
 Write your self a function that takes in three variables, a, b, and c
 and returns (a+b)/c
+```{r}
+triple <- function(a, b, c) {
+  y <- (a+b)/c
+  if (c == 0) {
+    cat("Please do not divide by 0 \n")
+    return(NULL)
+  }
+  return(y)
+}
+
+triple(6, 2, 3)
+triple(4, 5, -3)
+triple(127, 248, 3)
+triple(2, 3, 0)
+```
 
 
 #Default values
@@ -141,6 +158,7 @@ x2power<-function(x,n=2)
 x2power(4)
 x2power("bob","37")
 x2power(1:5,4:7)
+x2power(1:5, 2)
 ```
 
 Action Required
@@ -183,6 +201,8 @@ my_res=critical_KPI(2,3,4)
 
 my_res$kpi1
 my_res$kpi2
+
+critical_KPI(1:4, 4:6, 7:9)
 
 ```
 

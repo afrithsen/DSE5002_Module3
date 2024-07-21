@@ -3,6 +3,8 @@ title: "PairProgramming_If_else"
 author: "HDS"
 date: "2024-06-24"
 output: html_document
+editor_options: 
+  chunk_output_type: inline
 ---
 
 ```{r setup, include=FALSE}
@@ -55,6 +57,8 @@ We use an else statement
 y=0
 z=0
 x=5
+x=12
+x=-8
 
 if(x<10)
 {
@@ -83,12 +87,12 @@ Each if statement can only have one else
 We can put if statements inside elses to allow for more possible options
 
 ```{R}
-x=-1
+x=16
 if(x<0)
 {
   cat("Negative X value\n")
 }else
-{if(x%%2==1)
+{if(x%%2==0)
   {
     cat("X is even\n")
   }
@@ -122,10 +126,19 @@ What test condition would you need to figure out if I will stop at starbucks?
 Set up an if statement that prints out the decision
 
 ```{R}
-people_in_line=3
-scones_in_stock=TRUE
+people_in_line=5
+scones_in_stock=FALSE
 
-# write your code here
+if (scones_in_stock == TRUE & people_in_line <= 4){
+  cat("coffee and scone time")
+  } else {
+    if (people_in_line <= 2){
+      cat("coffee time")}
+    else {
+      cat("try again tomorrow")
+    }  
+  }
+  
 
 
 ```
@@ -140,7 +153,7 @@ second for FALSE
 it might look like this
 
 ```{R}
-x=5
+x=15
 y=ifelse(x<10,0.125*x,0.25*x)
 y
 ```

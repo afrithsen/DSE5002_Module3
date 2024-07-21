@@ -3,6 +3,8 @@ title: "PairProgamming_Loops"
 author: "HDS"
 date: "2024-06-24"
 output: pdf_document
+editor_options: 
+  chunk_output_type: inline
 ---
 
 ```{r setup, include=FALSE}
@@ -174,6 +176,7 @@ for(j in 1:length(h)){
 }
 print(hash_work)
 print(loop_work)
+print(x5)
 
 # note we could have used the keys of the hash, rather than the names
 # using the keys() makes more sense to me
@@ -182,6 +185,18 @@ print(loop_work)
 # the paste command is being used to add the contents of the hash at the key
 #key value to the key value itself.   Since each key value has only one value,
 # the paste function recycles the contents of names(h)[j] or keys(h)[j]
+
+
+x4 <- character()                                          # Create empty data object
+loop_work <- 0                                             # loopwork tracks how many steps
+for(i in 1:5) {                                            # Head of first for-loop
+  for(j in 1:5) {                                          # Head of nested for-loop
+    loop_work <- loop_work + 1
+    x4 <- c(x4, paste(LETTERS[i], letters[j], sep = "_"))  # Code block
+  }
+}
+print(x4)
+print(loop_work)
 
 ```
 #Hashing

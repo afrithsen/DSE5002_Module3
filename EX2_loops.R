@@ -31,7 +31,7 @@ for(i in 1:5) {                                            # Head of first for-l
     x4 <- c(x4, paste(LETTERS[i], letters[j], sep = "_"))  # Code block
   }
 }
-
+print(x4)
 ### A better way using hashing --> this is on almost every tech interview
 library(hash)
 
@@ -52,7 +52,7 @@ print(hash_work)
 print(loop_work)
 #make sure we just made the same two vectors
 all(x4 == x5)
-
+print(x5)
 # for loop with break statement
 for(i in 1:10) {                  # Head of for-loop
   x6 <- i^2                       # Code block
@@ -79,7 +79,7 @@ for(i in 1:ncol(iris_new1)) {                              # Head of for-loop
   }
 }
 head(iris_new1)
-
+head(iris)
 
 #################################While Loops#################################
 
@@ -92,10 +92,10 @@ while (i < 6) {   # Head of while loop + test condition
 ####################################Apply####################################
 
 # row sums for the 1st 5 rows and 1st 4 columns of IRIS
-apply(iris[1:5,0:4],MARGIN=1,FUN=sum)
+apply(iris[1:5,1:4],MARGIN=1,FUN=sum)
 
 # col means for the 1st 4 columns of IRIS
-apply(iris[,0:4],MARGIN=2,FUN=mean)
+apply(iris[,1:4],MARGIN=2,FUN=mean)
 
 # Custom function for apply
 square <- function(x){
@@ -103,6 +103,6 @@ square <- function(x){
 }
 
 # row & col custom function for the 1st 5 rows and 1st 4 columns of IRIS
-apply(iris[1:5,0:4],MARGIN=c(1,2),FUN=square)
+apply(iris[1:5,1:4],MARGIN=c(1,2),FUN=square)
 
-iris[1:5,0:4]
+iris[1:5,1:4]
